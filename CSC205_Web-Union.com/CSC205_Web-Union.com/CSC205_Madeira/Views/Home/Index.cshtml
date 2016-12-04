@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="Page">
+        <div class="centercontent">
+            <h1>Web-Union.com</h1>
+            <nav>
+                <ul>
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Person", "index", "Person")</li>
+                    <li>@Html.ActionLink("Families", "index", "Family")</li>
+                    <li>@Html.ActionLink("Create Member", "create", "Person")</li>
+                </ul> 
+            </nav>  
+            <img src="AboutUs.bmp">
+            <form>
+                <fieldset>
+                    <div class="form-group">
+                        <div class="label">
+                            <p>Username:</p>
+                        </div>
+
+                        <input type="text" name="username"><br>
+
+                    </div>
+                    <div class="form-group">
+                        <div class="label">
+                            <p>Password:</p>
+                        </div>
+                        <input type="text" name="Password:"><br>
+                        
+                    </div>
+                    
+                </fieldset>
+                <div class="createButton">
+                    <p>@Html.ActionLink("Login", "index", "Person")</p>
+
+                </div>
+            </form>
+            
+        </div> 
+    
+    <div class="contacts">
+        <p>Contact Number: (619)306-9764</p>
+        <p>Email: sam.green@geneva.edu</p>
+    </div>  
+       
+</div>
+     
+    

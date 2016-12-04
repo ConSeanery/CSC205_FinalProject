@@ -1,0 +1,213 @@
+﻿
+li{
+	font-size: 1.2em;
+	margin: default;
+}
+
+nav{
+	text-align: center;
+	background-color: rgb(0,40,40);
+	width: 100%;
+}
+
+nav ul li{	
+	display: inline-block;
+	color: green;
+	font-size: 1.2em;
+	background-color: rgb(0,0,60);
+	box-shadow: 2px 2px 2px black;
+	margin-left: 5px;
+	border: 2px solid black;
+	margin-bottom: 5px;
+}
+nav ul li:hover{	
+	display: inline-block;
+	color: black;
+	font-size: 1.2em;
+	background-color: rgb(0,0,60);
+	box-shadow: none;
+	margin-left: 5px;
+	border: 2px solid black;
+}
+h1{
+	text-align: center;
+	font-weight: italic;
+	font-size: 2.4em;
+	color: rgb(0,80,80);
+    Border: 1px solid rgb(0,40,40);
+	background-color: rgb(10,30,10);	
+	text-shadow: 2px 2px 2px black;
+	
+}
+
+.Page{
+	border: 2px solid black;
+	max-width: 75%;
+	text-align: center;
+	background-color: rgb(0,40,40);
+	margin-left: 200px;
+	margin-right: 200px;	
+	
+}
+
+.centercontent{
+	border: 2px solid black;
+	text-align: center;
+	background-color: rgb(20,60,20);	
+	background-image: url("SkyAndEarth.png");
+	vertical-align: middle;
+	margin-left: 100px;
+	margin-right: 100px;
+	margin-top: 50px;
+}
+.centercontent table{
+	vertical-align: middle;
+	margin-left: 100px;
+	margin-right: 100px;
+}
+.contacts{
+	border: 2px solid black;
+	padding: 20px;
+	max-width: 50%;
+	margin-left: 250px;
+	margin-right: 250px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	color: green;
+	box-shadow: 2px 2px 2px black;
+	text-shadow: 2px 2px 2px black;
+	
+}
+	
+
+img{
+	padding: 30px;
+	max-width: 75%;
+	max-height: 75%;
+	width: 75%;
+}
+
+.label{
+	display: block;
+}
+
+form div{
+	padding: 5px;
+	display: block;
+	
+}
+form fieldset{
+	background-color: rgb(10,30,10);
+	margin-right: 20px;
+	margin-left: 20px;
+	margin-top: 40px;
+	margin-bottom: 15px;
+	font-weight: bold;
+	text-decoration: none;
+	color: green;
+}
+table{
+	border-collapse: collapse;
+	vertical-align: middle;
+    max-width: 75%;
+	box-shadow: 4px 4px 4px black;
+	
+}
+ tr,th,td{
+	border: 2px solid black;
+	background-color: rgb(40,120,40);
+}
+.TableTitle td{
+	font-size: 2.4em;
+	background-color: green;
+	font-weight: bold;
+}
+
+.createButton{
+	border: 2px solid black;
+	background-color: green;
+	font-weight: bold;
+	max-width: 75%;
+	margin-left: 200px;
+	margin-right: 200px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	display: block;
+	background-color: rgb(20,60,20);
+	box-shadow: 2px 2px black;	
+}
+.createButton p a{
+	border: 2px solid black;
+	padding: 5px;
+	font-size: 1.6em;
+	background-color: blue;
+	margin-left: 5px;
+	margin-right: 5px;
+	color: green;
+	text-decoration: none;
+	box-shadow: 2px 2px 2px black;
+	
+}
+.createButton p a:hover{
+	border: px solid black;
+	padding: 5px;
+	font-size: 1.6em;
+	background-color: blue;
+	margin-left: 5px;
+	margin-right: 5px;
+	color: green;
+	color: black;
+	text-decoration: none;
+	box-shadow: none;
+	
+}
+.editButton p a{
+	border: 1px solid black;
+	padding: 1px;
+	font-size: 0.8em;
+	background-color: blue;
+	margin-left: 5px;
+	margin-right: 5px;
+	color: green;
+	text-decoration: none;
+	box-shadow: 2px 2px 2px black;
+	
+}
+.editButton p a:hover{
+	border: 2px solid black;
+	padding: 1px;
+	font-size: 0.8em;
+	background-color: blue;
+	margin-left: 5px;
+	margin-right: 5px;
+	color: green;
+	color: black;
+	text-decoration: none;
+	box-shadow: none;
+	
+}
+nav a{
+	
+	text-decoration: none;
+	color: green;
+	font: helvetica;
+	border-collapse: collapse;
+}
+input[type=text]
+{
+	border: 2px solid black;
+	margin-left: auto;
+	margin-right:auto;
+	background-color: rgb(10,30,10);
+	color: green;
+}
+input[type=submit]
+{
+	background-color: Blue;
+	color: green;
+	font-weight: bold;
+	padding: 5 px;
+}
+dl{
+	border: 2px solid black;	
+}
