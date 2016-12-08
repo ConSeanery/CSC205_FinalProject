@@ -15,11 +15,11 @@
             </ul>
         </nav>  
         <table>
-            <tr class="TableTitle"><td colspan=7>Families</td></tr>
-            <tr><th>ID</th><th>Name</th><th>Address</th><th>Zip Code</th><th>House Phone</th><th colspan="2">Edit</th></tr>
+            <tr class="TableTitle"><td colspan=6>Families</td></tr>
+            <tr><th>Name</th><th>Address</th><th>Zip Code</th><th>House Phone</th><th colspan="2">Edit</th></tr>
             @foreach (var family in Model)
             {
-               <tr><td> @family.id</td><td>@family.familyname</td><td>@family.address1, @family.city, @family.state</td><td>@family.zip</td><td>@family.homephone</td>
+               <tr><td>@family.familyname</td><td>@family.address1, @family.city, @family.state</td><td>@family.zip</td><td>@family.homephone</td>
             <td class="editButton"><p>@Html.ActionLink("Edit", "edit", "Family")&nbsp;<br /></p></td>
             <td class="editButton"><p>@Html.ActionLink("Delete", "index","Family")&nbsp;<br /></p></td></tr>//,
             }
