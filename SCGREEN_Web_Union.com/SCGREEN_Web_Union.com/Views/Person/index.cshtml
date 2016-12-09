@@ -32,7 +32,7 @@
                 @foreach (var person in Model)
                 {
                     <tr><td>@Html.DisplayFor(modelItem => person.firstname)</td><td>@Html.DisplayFor(modelItem => person.middlename)</td><td>@Html.DisplayFor(modelItem => person.lastname)</td><td>@Html.DisplayFor(modelItem => person.cell)</td><td>- @Html.DisplayFor(modelItem => person.relationship)</td><td>@Html.DisplayFor(modelItem => person.familyId)</td>
-                        <td class="editButton"><p>@Html.ActionLink("Edit", "edit", "Person")&nbsp;<br /></p></td><td class="editButton"><p>@Html.ActionLink("Delete", "index", "Person")&nbsp;<br /></p></td></tr>//, 
+                        <td class="editButton"><p>@Html.ActionLink("Edit", "edit", new { id = person.id })&nbsp;<br /></p></td><td class="editButton"><p>@Html.ActionLink("Delete", "delete", new { id = person.id })&nbsp;<br /></p></td></tr>//, 
                 }
             </table>
             <div class="createButton">
