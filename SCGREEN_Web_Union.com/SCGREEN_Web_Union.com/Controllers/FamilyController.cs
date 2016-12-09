@@ -95,23 +95,78 @@ namespace SCGREEN_Web_Union.com.Controllers
             }
 
         }
-       // // GET: Person/Details/5
-       // public ActionResult details(int id) 
+        [HttpPost]
+        public ActionResult Edit(int id, FormCollection collection)
+        {
+            try
+            {
+                var families = (List<Family>)Session["familyList"];
+
+                var f = families[id];
+
+                Family family = new Family()
+                {
+                    id = f.id,
+                    familyname = collection["familyname"],
+                    address1 = collection["address1"],
+                    city = collection["city"],
+                    state = collection["state"],
+                    zip = collection["zip"],
+                    homephone = collection["homephone"]
+                };
+
+                families.Where(x => x.id == id).First().familyname = collection["familyname"];
+                families.Where(x => x.id == id).First().address1 = collection["address1"];
+                families.Where(x => x.id == id).First().city = collection["city"];
+                families.Where(x => x.id == id).First().state = collection["state"];
+                families.Where(x => x.id == id).First().zip = collection["zip"];
+                families.Where(x => x.id == id).First().homephone = collection["homephone"];
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        public ActionResult Delete(int id)
+        {
+            var families = (List<Family>)Session["familyList"];
+
+            var f = families[id];
+
+            Session["familyList"] = families.Where(x => x.id != id).ToList();
+
+            families = (List<Family>)Session["familyList"];
+
+            for (int x = id; x < families.Count(); x++)
+            {
+                if (families[x] != null)
+                {
+                    families[x].id = x;
+                }
+            }
+
+            return RedirectToAction("Index");
+        }
+        // // GET: Person/Details/5
+        // public ActionResult details(int id) 
         //{
-            // Get the list of people from the session
-            //var pList = (List<Family>)Session["FamilyList"];
+        // Get the list of people from the session
+        //var pList = (List<Family>)Session["FamilyList"];
 
-            // Get the person with the passed in ID
-           // var p = pList[id]; //
+        // Get the person with the passed in ID
+        // var p = pList[id]; //
 
-           // var f = families[id];
+        // var f = families[id];
 
-            //    return View(f);
+        //    return View(f);
 
-            // Return the person data to the view
-           // return View(p);
-            
-       // }
+        // Return the person data to the view
+        // return View(p);
+
+        // }
     }
 
 }

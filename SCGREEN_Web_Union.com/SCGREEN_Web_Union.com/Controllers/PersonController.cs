@@ -1,4 +1,4 @@
-﻿
+﻿using System.Linq;
 using System.Collections.Generic;
 using System.Web.Mvc;
 using System.Web.Routing;
@@ -122,16 +122,17 @@ namespace SCGREEN_Web_Union.com.Controllers
 
         // POST: Person/Edit/5
         [HttpPost]
-        public ActionResult Edit(FormCollection collection)
-        {
-            var resultlist = (List<Person>)Session["peopleList"];
-            
+        public ActionResult Edit(int id,FormCollection collection)
+        {     
             try
             {
-               
+                var people = (List<Person>)Session["peopleList"];
+
+                var f = people[id];
+
                 Person newPerson = new Person()
                 {
-                    id = 99,
+                    id = people.Count,
                     firstname = collection["firstname"],
                     middlename = collection["middlename"],
                     lastname = collection["lastname"],
@@ -139,16 +140,14 @@ namespace SCGREEN_Web_Union.com.Controllers
                     relationship = collection["relationship"],
                     familyId = int.Parse(collection["familyId"])
                 };
-                
 
-                // Add the person to the list
-                people = (List<Person>)Session["peopleList"];
-                people.Add(newPerson);
 
-                // Save the list to the session
-                Session["peopleList"] = people;
-
-                //RedirectToAction("Delete");
+                people.Where(x => x.id == id).First().firstname = collection["firstname"];
+                people.Where(x => x.id == id).First().middlename = collection["middlename"];
+                people.Where(x => x.id == id).First().lastname = collection["lastname"];
+                people.Where(x => x.id == id).First().cell = collection["cell"];
+                people.Where(x => x.id == id).First().relationship = collection["relationship"];
+                people.Where(x => x.id == id).First().familyId = int.Parse(collection["familyID"]);
 
                 return RedirectToAction("Index");
             }   
@@ -160,30 +159,25 @@ namespace SCGREEN_Web_Union.com.Controllers
 
 
         // GET: Person/Delete/5
-        public ActionResult Delete()
+        public ActionResult Delete(int id)
         {
-            return View("Index");
-        }
+            var people = (List<Person>)Session["peopleList"];
 
-        // POST: Person/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            
-            try
-            {
-                // TODO: Add delete logic here
-                var p = (List<Person>)Session["peopleList"];
-                var st = p.Find(c => c.id == id);
-                p.Remove(st);
+            var f = people[id];
 
-                Session["peopleList"] = people;
-                return RedirectToAction("Index");              
-            }
-            catch
+            Session["peopleList"] = people.Where(x => x.id != id).ToList();
+
+            people = (List<Person>)Session["peopleList"];
+
+            for (int x = id; x < people.Count(); x++)
             {
-                return View("Index");
+                if (people[x] != null)
+                {
+                    people[x].id = x;
+                }
             }
+
+            return RedirectToAction("Index");
         }
     }
 }
